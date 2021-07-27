@@ -22,14 +22,14 @@ def incoming_data(sock):
     while True:
         data, addr = sock.recvfrom(2048) # buffer size is 2048 bytes
         packet = Packet(data)
-        print(packet.packet_header.get_game_version())
-        print(len(packet.packet_header))
-        print(packet.get_packet_size())
+        if packet.packet_body.packet_id == 3:
+            print(packet.packet_body)
 
-        # print(len(bytearray(data)))
-        # print(bytearray(data))
-        # packet_header = PacketHeader(data[:2], data[2:3], data[3:4], data[4:5], data[5:6], data[6:14], data[14:18], data[18:22], data[22:23], data[23:24])
-        # print(packet_header)
+            #if you are only intrested in certain types of packets for example Lap data,
+            #you can set the packet.packetbody == 2 and you will only get the lapdata
+        
+
+   
 
 
 
