@@ -1,6 +1,5 @@
 import socket
-from classes import PacketHeader
-from classes import Packet
+from classes.packet import Packet
 
 
 def main():
@@ -23,7 +22,8 @@ def incoming_data(sock):
     while True:
         data, addr = sock.recvfrom(2048) # buffer size is 2048 bytes
         packet = Packet(data)
-        print(packet.packet_header)
+        print(packet.packet_header.get_game_version())
+        print(len(packet.packet_header))
         print(packet.get_packet_size())
 
         # print(len(bytearray(data)))
