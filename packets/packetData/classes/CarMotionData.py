@@ -1,3 +1,5 @@
+import struct
+
 class CarMotionData():
     BYTES_SPLITS_INT = {'world_forward_dir_x' : 26, 'world_forward_dir_y' : 28, 'world_forward_dir_z' : 30, 'world_right_dir_x' : 32 , 'world_right_dir_y' : 34, 'world_right_dir_z' : 36}
     #normaliszed
@@ -16,10 +18,30 @@ class CarMotionData():
         
             end_prev = 0 # float values start from byte 0 until byte 24 and from byte 36 until byte 60
             for key, value in self.BYTES_SPLITS_FLOAT.items():
-                setattr(self, key, float.from_bytes(data[end_prev:value], byteorder='little'))
+                setattr(self, key, struct.unpack('<f', data[end_prev:value]))
                 end_prev = value
+                if end_prev == 24: #to jump the gap of bytes, is bad coding probally but don't know how to fix it 
+                    end_prev = 36
 
             self.data_lenhgt = len(data)
 
         else:
             raise ValueError('Data must be size of {0} bytes'.format(self.SIZE)) 
+
+    def __str__(self):
+        return str(
+            self.get_all_data()
+        )
+
+    def get_all_data(self):
+        data = dict()
+        for key , value in self.BYTES_SPLITS_FLOAT.items():
+            data.update({key : getattr(self, key)})
+        for key, value in self.BYTES_SPLITS_INT.items():
+            data.update({key : getattr(self, key)})
+        return data
+                    
+
+    def __repr__(self):
+        return str(self.get_all_data())
+

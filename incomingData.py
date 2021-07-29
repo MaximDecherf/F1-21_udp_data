@@ -25,7 +25,7 @@ def incoming_data(sock):
        
         
         if packet.packet_body.packet_id == 0:
-            print(len(packet.packet_body))
+            print(packet.packet_body.body_data)
 
             #if you are only intrested in certain types of packets for example Lap data,
             #you can set the packet.packetbody == 2 and you will only get the lapdata
