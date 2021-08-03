@@ -35,10 +35,6 @@ class PacketMotionData():
                 end_prev = value
                 
 
-    
-    
-    def __call__(self, body_data):
-        return PacketMotionData(body_data)
 
     def __len__(self):
         return self.data_lenhgt

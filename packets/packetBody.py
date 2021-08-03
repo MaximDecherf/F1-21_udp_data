@@ -1,7 +1,8 @@
 from .packetData.PacketMotionData import PacketMotionData
+from .packetData.PacketSessionData import PacketSessionData
 
 class PacketBody:
-    SWITCHER = [PacketMotionData(None), None, None, None, None, None, None, None, None, None, None, None] 
+    SWITCHER = [PacketMotionData, PacketSessionData, None, None, None, None, None, None, None, None, None, None] 
     # the index of the list is equal to the packet_id
     # Packet Name	 Value/packet_id	Description
     # Motion	            0	    Contains all motion data for player’s car – only sent while player is in control
