@@ -1,4 +1,4 @@
-from .packetData.PackMotionData import PacketMotionData
+from .packetData.PacketMotionData import PacketMotionData
 
 class PacketBody:
     SWITCHER = [PacketMotionData(None), None, None, None, None, None, None, None, None, None, None, None] 
