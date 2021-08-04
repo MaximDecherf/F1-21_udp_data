@@ -6,7 +6,7 @@ class MarshalZone:
 
     def __init__(self, data):
      
-        self.zone_flag = int.from_bytes(data[4], byteorder='little')
+        self.zone_flag = int.from_bytes(data[3:4], byteorder='little')
         self.zone_start = struct.unpack('<f', data[0:4])
         
         

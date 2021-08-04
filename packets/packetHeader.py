@@ -1,7 +1,7 @@
 import struct
 
 class PacketHeader():
-    BYTES_SPLITS = {'packet_format' : [True, int, 2], 'game_major_version' : [True, int, 3], 'game_minor_version' : [True, int, 4], 'packet_version' : [True, int, 5] , 'packet_id' : [True, int, 6], 'session_uuid' : [True, int, 14], 'session_time' : [True, float, 18], 'frame_identifier' : [True, int, 22], 'player_car_index' : [True, int, 23], 'secondary_player_car_index' : [True, int, 24]}
+    BYTES_SPLITS = {'packet_format' : [True, int, 2], 'game_major_version' : [True, int, 3], 'game_minor_version' : [True, int, 4], 'packet_version' : [True, int, 5] , 'packet_id' : [True, int, 6], 'session_uuid' : [True, int, 14], 'session_time' : [True, int, 18], 'frame_identifier' : [True, int, 22], 'player_car_index' : [True, int, 23], 'secondary_player_car_index' : [True, int, 24]}
     HEADER_SIZE = 24
 
     def __init__(self, header_data):
@@ -10,7 +10,7 @@ class PacketHeader():
             for key, value in self.BYTES_SPLITS.items():
                 if value[0]:
                     if value[1] == int:
-                        setattr(self, key,  struct.unpack('<i', header_data[end_prev:value[2]]))
+                        setattr(self, key, int.from_bytes(header_data[end_prev:value[2]], byteorder='little'))
                         end_prev = value[2]
                     elif value[1] == float:
                         setattr(self, key, struct.unpack('<f', header_data[end_prev:value[2]]))
