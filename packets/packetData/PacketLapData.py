@@ -2,7 +2,7 @@ from .classes.LapData import LapData
 
 class PacketLapData:
 
-    BYTES_SPLIT = {'lap_data' : [False, 43, LapData, 946]}
+    BYTES_SPLITS = {'lap_data' : [False, 43, LapData, 946]}
 
     def __init__(self, body_data):
         self.body_data = body_data
