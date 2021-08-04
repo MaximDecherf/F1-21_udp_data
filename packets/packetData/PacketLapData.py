@@ -26,3 +26,11 @@ class PacketLapData:
                 setattr(self, key, data_list)
                 end_prev = value[3]
 
+
+    def __repr__(self):
+        return str(self.__dict__)
+    
+    def __str__(self):
+        full_dict = self.__dict__
+        del full_dict['body_data']
+        return str(self.__class__) + " : " + str(full_dict)
