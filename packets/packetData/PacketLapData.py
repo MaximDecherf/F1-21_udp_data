@@ -1,4 +1,5 @@
 from .classes.LapData import LapData
+import struct
 
 class PacketLapData:
 
