@@ -34,4 +34,6 @@ class PacketSessionData:
         return str(self.__dict__)
     
     def __str__(self):
-        return str(self.__class__) + " : " + str(self.__dict__)
+        full_dict = self.__dict__
+        del full_dict['body_data']
+        return str(self.__class__) + " : " + str(full_dict)
