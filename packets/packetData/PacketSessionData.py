@@ -15,7 +15,7 @@ class PacketSessionData:
             for key, value in self.BYTES_SPLITS.items():
                 if value[0]:
                     if value[1] == int:
-                        setattr(self, key, int.from_bytes(body_data[end_prev:value[2]], byteorder='little'))
+                        setattr(self, key,  struct.unpack('<i', body_data[end_prev:value[2]]))
                         end_prev = value[2]
                     elif value[1] == float:
                         setattr(self, key, struct.unpack('<f', body_data[end_prev:value[2]]))

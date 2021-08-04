@@ -6,6 +6,8 @@ class PacketMotionData():
 
     BYTES_SPLITS_FLOAT = {'local_velocity_x' : 1404, 'local_velocity_y' : 1408, 'local_velocity_z' : 1412, 'angular_velocity_x' : 1416, 'angular_velocity_y' : 1420, 'angular_velocity_z' : 1424, 'angular_acceleration_x' : 1428, 'angular_acceleration_y' : 1432, 'angular_acceleration_z' : 1436, 'front_wheels_angle' : 1440}
 
+    #TODO refractor code
+
     def __init__(self, body_data):
         if body_data != None:
             self.body_data = body_data
