@@ -6,9 +6,10 @@ from .packetData.PacketParticipantsData import PacketParticipantsData
 from .packetData.PacketCarSetupData import PacketCarSetupData
 from .packetData.PacketCarTelemetryData import PacketCarTelemetryData
 from .packetData.PacketCarStatusData import PacketCarStatusData
+from .packetData.PacketFinalClassificationData import PacketFinalClassificationData
 
 class PacketBody:
-    SWITCHER = [PacketMotionData, PacketSessionData, PacketLapData, PacketEventData, PacketParticipantsData, PacketCarSetupData, PacketCarTelemetryData, PacketCarStatusData, None, None, None, None] 
+    SWITCHER = [PacketMotionData, PacketSessionData, PacketLapData, PacketEventData, PacketParticipantsData, PacketCarSetupData, PacketCarTelemetryData, PacketCarStatusData, PacketFinalClassificationData, None, None, None] 
     # the index of the list is equal to the packet_id
     # Packet Name	 Value/packet_id	Description
     # Motion	            0	    Contains all motion data for player’s car – only sent while player is in control
