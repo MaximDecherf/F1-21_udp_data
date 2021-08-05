@@ -14,7 +14,7 @@ from .classes.eventClasses.TeamMateInPits import TeamMateInPits
 
 class PacketEventData:
 
-    EVENT_CODES = {'SSTA' : 'Sent when the session starts', 'SEND' : 'Sent when the session ends', 'FTLP' : FastestLap, 'RTMT' : Retirement, 'DRSE' : 'Race control have enabled DRS', 'DRSD' : "Race control have disabled DRS", 'TMPT' : TeamMateInPits, 'CHQF' : 'The chequered flag has been waved', 'RCWN' : RaceWinner, 'PENA' : Penalty, 'SPTP' : SpeedTrap, 'STLG' : StartLights, 'LGOT' : 'And it is Lights out and away we go', 'DTSV' : DriveThroughPenaltyServed, 'SGSV' : StopGoPenaltyServed, 'FLBK' : Flashback, 'BUTN' : Buttons }
+    EVENT_CODES = {'SSTA' : 'Sent when the session starts', 'SEND' : 'Sent when the session ends', 'FTLP' : FastestLap, 'RTMT' : Retirement, 'DRSE' : 'Race control have enabled DRS', 'DRSD' : "Race control have disabled DRS", 'TMPT' : TeamMateInPits, 'CHQF' : 'The chequered flag has been waved', 'RCWN' : RaceWinner, 'PENA' : Penalty, 'SPTP' : SpeedTrap, 'STLG' : StartLights, 'LGOT' : 'And it is Lights out and away we go, ki ki ki RAA, ki ki EYY', 'DTSV' : DriveThroughPenaltyServed, 'SGSV' : StopGoPenaltyServed, 'FLBK' : Flashback, 'BUTN' : Buttons }
 
     def __init__(self, body_data):
         self.body_data = body_data
