@@ -24,7 +24,7 @@ def incoming_data(sock):
         packet = Packet(data)
         
         
-        if packet.packet_body.packet_id == 11:
+        if packet.packet_body.packet_id == 1:
             print(packet.packet_body.body_data)
 
             #if you are only intrested in certain types of packets for example Lap data,
