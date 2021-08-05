@@ -4,7 +4,7 @@ class ParticipantData:
     pattern = r'\x00'
 
     def __init__(self, data):
-        self.air_controlled = int.from_bytes(data[0:1], byteorder='little')
+        self.air_controlled = int.from_bytes(data[0:1], byteorder='little') #TODO fix typo air -> ai
         self.driver_id = int.from_bytes(data[1:2], byteorder='little')
         self.network_id = int.from_bytes(data[2:3], byteorder='little')
         self.team_id = int.from_bytes(data[3:4], byteorder='little')
