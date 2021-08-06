@@ -4,7 +4,9 @@ class CarTelemetryData:
 
     BYTES_SPLITS = {'speed' : [True, int, 2], 'throttle' : [True, float, 6], 'steer' : [True, float, 10], 'brake' : [True, float, 14], 'clutch' : [True, int, 15], 'gear' : [True, int, 16], 'engine_RPM': [True, int, 18], 'drs' : [True, int, 19], 'rev_lights_percent' : [True, int, 20], 'rev_lights_bit_value' : [True, int, 22], 'brakes_temperature' : [False, 2, int, 30], 'tyres_surface_temperature' : [False, 1, int, 34], 'tyres_inner_temperature' : [False, 1, int, 38], 'engine_temperature' : [True, int, 40], 'tyres_pressure': [False, 4, float, 56], 'surface_type' : [False, 1 , int, 60]}
 
-    def __init__(self, data):
+    NUMBER_DECODER= {'drs' : ['off', 'on']}
+
+    def __init__(self, data, decode_numbers=True):
         end_prev = 0
         for key, value in self.BYTES_SPLITS.items():
             if value[0]:
@@ -24,6 +26,17 @@ class CarTelemetryData:
                     end_prev = end_prev+value[1]
                 setattr(self, key, data_list)
                 end_prev = value[3]
+        if decode_numbers:
+            self.decode_numbers() 
+    
+    
+    def decode_numbers(self):
+        for key, decoder in self.NUMBER_DECODER.items():
+            int_value = getattr(self, key)
+            if int_value < 0:
+                setattr(self, key, 'invalid')
+            else:
+                setattr(self, key, decoder[int_value])
         
     def __repr__(self):
         return str(self.__dict__)
