@@ -7,7 +7,7 @@ class LapData:
     NUMBER_DECODER = {'pit_status' : ['none', 'pitting', 'in pit area'], 'sector' : ['sector1', 'sector2', 'sector3'], 'current_lap_invalid' : ['valid', 'invalid'], 'driver_status' : ['in garage', 'flying lap', 'in lap', 'out lap', 'on track'], 'result_status' : ['invalid', 'inactive', 'active', 'finished', 'dnf', 'disqualified', 'not classified', 'retired'], 'pit_lane_timer_active' : ['inactive', 'active']}
 
 
-    def __init__(self, data):
+    def __init__(self, data, decode_numbers=True):
         end_prev = 0
         for key, value in self.BYTES_SPLITS.items():
             if value[0]:
