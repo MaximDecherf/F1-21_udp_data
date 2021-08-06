@@ -4,7 +4,9 @@ class CarDamageData:
 
     BYTES_SPLITS = {'tyres_wear' : [False, 4, float, 16], 'tyres_damage' : [False, 1, int, 20], 'brakes_damage' : [False, 1, int, 24], 'front_left_wing_damage' : [True, int, 25], 'front_right_wing_damage' : [True, int, 26], 'rear_wing_damage' : [True, int, 27], 'floor_damage' : [True, int, 28], 'diffuser_damage' : [True, int, 29], 'sidepod_damage' : [True, int, 30], 'drs_fault' : [True, int, 31], 'gearbox_damage' : [True, int, 32], 'engine_damage' : [True, int, 33], 'engine_MGUH_wear' : [True, int, 34],  'engine_ES_wear' : [True, int, 35], 'engine_CE_wear' : [True, int, 36], 'engine_ICE_wear' : [True, int, 37], 'engine_MGUK_wear' : [True, int , 38], 'engine_TC_wear' : [True, int, 39]} 
 
-    def __init__(self, data):
+    NUMBER_DECODER = {'drs_fault' : ['OK', 'Fault']}
+
+    def __init__(self, data, decode_numbers=True):
         end_prev = 0
         for key, value in self.BYTES_SPLITS.items():
             if value[0]:
@@ -22,6 +24,17 @@ class CarDamageData:
                     end_prev = end_prev+value[1]
                 setattr(self, key, data_list)
                 end_prev = value[3]
+        if decode_numbers:
+            self.decode_numbers() 
+    
+    
+    def decode_numbers(self):
+        for key, decoder in self.NUMBER_DECODER.items():
+            int_value = getattr(self, key)
+            if int_value < 0:
+                setattr(self, key, 'invalid')
+            else:
+                setattr(self, key, decoder[int_value])
         
     def __repr__(self):
         return str(self.__dict__)
