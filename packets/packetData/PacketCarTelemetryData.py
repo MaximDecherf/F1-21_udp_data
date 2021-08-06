@@ -36,7 +36,11 @@ class PacketCarTelemetryData:
             if int_value < 0:
                 setattr(self, key, 'invalid')
             else:
-                setattr(self, key, decoder[int_value])
+                if int_value == 255:
+                    setattr(self, key, 'MFD closed')
+
+                else:
+                    setattr(self, key, decoder[int_value])
     
     def __repr__(self):
         return str(self.__dict__)
