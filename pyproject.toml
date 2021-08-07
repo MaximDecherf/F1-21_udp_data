@@ -1,0 +1,31 @@
+[project]
+name = "F1-21_udp_data"
+version = "0.1.0"
+description = "Create a pyproject.toml file for an existing project."
+authors = [
+    "Maxim Decherf"
+]
+license = "MIT"
+readme = "README.md"
+python = "^3.8"
+homepage = "https://github.com/MaximDecherf/F1-21_udp_data"
+repository = "https://github.com/MaximDecherf/F1-21_udp_data"
+documentation = "https://github.com/MaximDecherf/F1-21_udp_data"
+
+keywords = ["F1 2021", "F1 game", "F1 udp data python"]
+
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+# Requirements
+[dependencies]
+struct = "^3.4"
+socket = "^3.2"
+
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
