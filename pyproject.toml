@@ -1,13 +1,13 @@
 [project]
 name = "F1-21_udp_data"
-version = "0.1.0"
-description = "Create a pyproject.toml file for an existing project."
+version = "0.0.1"
+description = "pyproject.toml file for F1 2021 udp data in python."
 authors = [
     "Maxim Decherf"
 ]
 license = "MIT"
 readme = "README.md"
-python = "^3.8"
+python = "^3.6"
 homepage = "https://github.com/MaximDecherf/F1-21_udp_data"
 repository = "https://github.com/MaximDecherf/F1-21_udp_data"
 documentation = "https://github.com/MaximDecherf/F1-21_udp_data"
