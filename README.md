@@ -43,7 +43,7 @@ collector = F1data(filter_packets=['CAR_TELEMETRY'])
 Next we define a socket to listen to. Default is ip: "127.0.0.1" and port: "20777" if u want to change this use the following code:
 
 ```python
-sock = collector.setup_udp_con(ip="your ip as string", port=your port as int)
+sock = collector.setup_udp_con(ip="your ip as string", port="your port as int")
 ```
 
 As last we get back the data that is being send out from the F1 2021 game with the .run(sock) function
