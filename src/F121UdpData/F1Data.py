@@ -1,8 +1,8 @@
 import socket
-from packets.packet import Packet
+from .packets.packet import Packet
 
 
-class F1data:
+class F1Data:
 
     PACKET_SIZE_MAPPER = {'MOTION': 1464, 'SESSION': 625, 'LAP_DATA': 970, 'EVENT': 36, 'PARTICIPANTS': 1257, 'CAR_SETUPS': 1102,
                           'CAR_TELEMETRY': 1347, 'CAR_STATUS': 1058, 'FINAL_CLASSIFICATION': 839, 'LOBBY_INFO': 1191, 'CAR_DAMAGE': 882, 'SESSION_HISTORY': 1155}

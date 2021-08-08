@@ -1,4 +1,4 @@
-from packets.packetData.classes.ParticipantData import ParticipantData
+from .classes.ParticipantData import ParticipantData
 import struct
 
 class PacketParticipantsData:

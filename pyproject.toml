@@ -1,6 +1,6 @@
 [project]
-name = "F1-21_udp_data"
-version = "0.0.1"
+name = "F1-21UdpData"
+version = "0.0.7"
 description = "pyproject.toml file for F1 2021 udp data in python."
 authors = [
     "Maxim Decherf"

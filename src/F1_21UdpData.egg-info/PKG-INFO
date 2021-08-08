@@ -1,3 +1,20 @@
+Metadata-Version: 2.1
+Name: F1-21UdpData
+Version: 0.0.7
+Summary: Converts te UDP packages from the F1 -21 game to easy to use and readable python classes.
+Home-page: https://github.com/MaximDecherf/F1-21_udp_data
+Author: Maxim Decherf
+Author-email: decherfmaxim@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/MaximDecherf/F1-21_udp_data/issues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # F1-21_udp_data
 
 This is a package that helps you to convert the UDP data from the F1 2021 game to readable and easy to use python classes;
@@ -50,4 +67,6 @@ As last we get back the data that is being send out from the F1 2021 game with t
 ```python
 data = collector.run(sock)
 ```
+
+
 
