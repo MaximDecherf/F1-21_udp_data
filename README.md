@@ -51,3 +51,8 @@ As last we get back the data that is being send out from the F1 2021 game with t
 data = collector.run(sock)
 ```
 
+# Sidenote
+
+This is one of my first projects that i have released as a pip installable package, if there are huge problems with the code or the release don't hesitate to let me know :).
+
+
